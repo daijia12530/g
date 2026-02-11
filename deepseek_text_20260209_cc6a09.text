@@ -1,0 +1,27 @@
+city-transport-system/
+├── client/                    # 前端代码
+│   ├── index.html            # 司机端主页面
+│   ├── passenger.html        # 乘客端页面
+│   ├── styles.css            # 样式文件
+│   └── manifest.json         # PWA配置
+├── server/                   # 后端代码
+│   ├── server.js            # 主服务器文件
+│   ├── database.js          # 数据库初始化
+│   ├── routes/              # 路由目录
+│   │   ├── auth.js          # 认证路由
+│   │   ├── drivers.js       # 司机路由
+│   │   ├── orders.js        # 订单路由
+│   │   └── admin.js         # 管理员路由
+│   ├── models/              # 数据模型
+│   │   ├── Driver.js        # 司机模型
+│   │   └── Order.js         # 订单模型
+│   ├── middleware/          # 中间件
+│   │   └── auth.js          # 认证中间件
+│   ├── config/              # 配置文件
+│   │   └── database.js      # 数据库配置
+│   ├── package.json         # 依赖配置
+│   ├── package-lock.json    # 依赖锁定
+│   └── .env.example         # 环境变量示例
+├── README.md                # 项目说明
+├── LICENSE                  # 许可证
+└── deploy.bat              # Windows部署脚本
