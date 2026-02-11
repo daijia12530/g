@@ -1,0 +1,827 @@
+/* ===== 基础样式重置 ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+    background: #f5f5f5;
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* ===== 页面容器 ===== */
+.page {
+    display: none;
+    min-height: 100vh;
+    background: white;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ===== 登录/连接页面 ===== */
+.login-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.login-logo {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.login-header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.login-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.login-tips {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* ===== 表单样式 ===== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 16px;
+    resize: vertical;
+    min-height: 100px;
+    font-family: inherit;
+}
+
+/* ===== 按钮样式 ===== */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background: #e9ecef;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* ===== 卡片样式 ===== */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ===== 统计卡片 ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #666;
+}
+
+/* ===== 订单列表 ===== */
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.order-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s;
+}
+
+.order-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.order-id {
+    font-size: 12px;
+    color: #666;
+    font-family: monospace;
+}
+
+.order-status {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.order-status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.order-status.confirmed {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.order-status.picked {
+    background: #d4edda;
+    color: #155724;
+}
+
+.order-status.completed {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.order-status.canceled {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.order-route {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.order-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.order-time {
+    font-size: 12px;
+    color: #666;
+}
+
+.order-price {
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 16px;
+}
+
+.passenger-info {
+    font-size: 13px;
+    color: #666;
+    margin-top: 8px;
+}
+
+.location-note {
+    font-size: 13px;
+    color: #666;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 8px;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+
+.order-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.order-actions .btn {
+    flex: 1;
+    padding: 8px;
+}
+
+/* ===== 价格设置 ===== */
+.price-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.setting-row:last-child {
+    border-bottom: none;
+}
+
+.price-input {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.price-input:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+/* ===== 分享区域 ===== */
+.share-area {
+    background: #f0f7ff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px dashed #667eea;
+}
+
+.share-area h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.share-area p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.share-code {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #e0e0e0;
+    font-family: monospace;
+    font-size: 24px;
+    letter-spacing: 4px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.share-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* ===== 路线选择 ===== */
+.route-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.route-btn {
+    padding: 10px 20px;
+    background: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    flex: 1;
+    min-width: calc(50% - 5px);
+    transition: all 0.3s;
+}
+
+.route-btn:hover {
+    background: #e9ecef;
+}
+
+.route-btn.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.route-info {
+    display: flex;
+    justify-content: space-between;
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+}
+
+.info-item span:first-child {
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.info-item span:last-child {
+    font-weight: 500;
+    color: #333;
+}
+
+/* ===== 价格显示 ===== */
+.price-display {
+    text-align: center;
+    padding: 25px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.price-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.price-value {
+    font-size: 40px;
+    font-weight: bold;
+    color: #e74c3c;
+    line-height: 1;
+}
+
+.price-details {
+    margin: 20px 0;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.price-row.total {
+    border-bottom: none;
+    border-top: 2px solid #667eea;
+    font-weight: bold;
+    padding-top: 15px;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+/* ===== 头部样式 ===== */
+.driver-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.driver-info-small {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.driver-avatar {
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+.driver-name {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.driver-phone {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+/* ===== 乘客欢迎页 ===== */
+.passenger-welcome {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+    border-radius: 0 0 25px 25px;
+}
+
+.passenger-welcome h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.passenger-welcome p {
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.driver-info-mini {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* ===== 内容区域 ===== */
+.driver-content, .passenger-content {
+    padding: 20px;
+    padding-bottom: 80px;
+}
+
+/* ===== 底部导航 ===== */
+.tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 100;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+.tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+    color: #999;
+    text-decoration: none;
+    padding: 8px 5px;
+    flex: 1;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-item:hover {
+    color: #667eea;
+}
+
+.tab-item.active {
+    color: #667eea;
+    font-weight: 500;
+}
+
+.tab-icon {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+/* ===== 模态框 ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    font-size: 17px;
+    font-weight: bold;
+    color: #333;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+}
+
+/* ===== 徽章 ===== */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 12px;
+    background: #e74c3c;
+    color: white;
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+/* ===== 空状态 ===== */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+    font-size: 14px;
+}
+
+.empty-state:before {
+    content: "📋";
+    font-size: 40px;
+    display: block;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .route-btn {
+        min-width: 100%;
+    }
+    
+    .driver-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .driver-name {
+        font-size: 16px;
+    }
+    
+    .price-value {
+        font-size: 36px;
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .share-area {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .route-btn {
+        min-width: calc(25% - 7.5px);
+    }
+}
+
+/* ===== 滚动条样式 ===== */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* ===== 工具类 ===== */
+.text-center {
+    text-align: center;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
